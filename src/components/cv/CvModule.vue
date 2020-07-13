@@ -1,7 +1,9 @@
 <template>
   <div class="cv-module">
     <h2 class="module__title title">{{ cvModule.mainTitle }}</h2>
-    <h3 class="module__title--secondary subtitle">{{ cvModule.secondaryTitle }}</h3>
+    <h3 class="module__title--secondary subtitle">
+      {{ cvModule.secondaryTitle }}
+    </h3>
     <div
       class="cv__content"
       v-for="paragraph in cvModule.paragraphs"
@@ -19,7 +21,11 @@ import { CvModuleData } from '@/typings/interfaces/CvModule';
 
 @Component
 export default class CvModule extends Vue {
-  @Prop() private cvModule!: CvModuleData;
+  @Prop() private cvModule!: CvModuleData = {
+    mainTitle: '',
+    secondaryTitle: '',
+    paragraphs: [],
+  };
 }
 </script>
 
