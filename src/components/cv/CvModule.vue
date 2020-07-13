@@ -1,7 +1,7 @@
 <template>
   <div class="cv-module">
-    <h2 class="module__title">{{ cvModule.mainTitle }}</h2>
-    <h3 class="module__title--secondary">{{ cvModule.secondaryTitle }}</h3>
+    <h2 class="module__title title">{{ cvModule.mainTitle }}</h2>
+    <h3 class="module__title--secondary subtitle">{{ cvModule.secondaryTitle }}</h3>
     <div
       class="cv__content"
       v-for="paragraph in cvModule.paragraphs"
