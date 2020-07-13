@@ -1,7 +1,7 @@
 {
   defaultSeverity: "error",
   extends: [
-    "stylelint-config-airbnb",
+    "stylelint-config-standard",
     "stylelint-config-prettier"
   ],
   plugins: [
