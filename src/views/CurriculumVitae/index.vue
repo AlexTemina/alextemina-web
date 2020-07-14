@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import CvModule from '@/components/cv/CvModule.vue';
-import { CvModuleData } from '../typings/interfaces/CvModule';
+import { CvModuleData } from '@/typings/interfaces/CvModuleData.type';
+import CvModule from './CvModule.vue';
 
 export default {
   components: {

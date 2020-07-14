@@ -1,7 +1,7 @@
 <template>
-  <div class="cv-module">
-    <h2 class="module__title title">{{ cvModule.mainTitle }}</h2>
-    <h3 class="module__title--secondary subtitle">
+  <div class="cv-module rounded-lg">
+    <h2 class="module__title text-5xl">{{ cvModule.mainTitle }}</h2>
+    <h3 class="module__title--secondary text-3xl">
       {{ cvModule.secondaryTitle }}
     </h3>
     <div
@@ -17,22 +17,25 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { CvModuleData } from '@/typings/interfaces/CvModule';
+import { CvModuleData } from '@/typings/interfaces/CvModuleData.type';
 
 @Component
 export default class CvModule extends Vue {
-  @Prop() private cvModule!: CvModuleData = {
-    mainTitle: '',
-    secondaryTitle: '',
-    paragraphs: [],
-  };
+  @Prop({
+    default: {
+      mainTitle: '',
+      secondaryTitle: '',
+      paragraphs: [],
+    },
+  })
+  private cvModule!: CvModuleData;
 }
 </script>
 
 <style scoped lang="scss">
 .cv-module {
   padding: 30px;
-  border-radius: 10px;
+  // border-radius: 10px;
   box-shadow: 0 0 7px 1px #e8e8e8;
 }
 </style>

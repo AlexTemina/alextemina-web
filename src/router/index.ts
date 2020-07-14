@@ -13,7 +13,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/cv',
     name: 'Curriculum Vitae',
-    component: () => import('../views/CurriculumVitae.vue'),
+    component: () => import('../views/CurriculumVitae/index.vue'),
   },
 ];
 

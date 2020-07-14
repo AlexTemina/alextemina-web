@@ -1,4 +1,4 @@
-import 'bulma/css/bulma.css';
+import '@/assets/styles/index.scss';
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
