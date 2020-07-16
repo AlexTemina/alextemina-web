@@ -7,9 +7,9 @@
 </template>
 
 <style scoped lang="scss">
-.main-link {
-  @apply text-4xl;
-  @apply text-blue-900;
-  @apply m-4;
-}
+  .main-link {
+    @apply text-4xl;
+    @apply text-blue-900;
+    @apply m-4;
+  }
 </style>
