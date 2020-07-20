@@ -1,8 +1,3 @@
-export interface CvModuleData {
-  title?: string;
-  subtitle?: string;
-}
-
 export interface Tag {
   text: string;
   color: 'purple' | 'green' | 'red' | 'gold' | 'gray';

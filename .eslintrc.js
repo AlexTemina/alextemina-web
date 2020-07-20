@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     'plugin:vue/essential',
+    "plugin:prettier/recommended",
     '@vue/airbnb',
     '@vue/typescript/recommended',
   ],
@@ -16,7 +17,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
-    'vue/script-indent': ['error', 2, { baseIndent: 1 }],
+    "indent": ["error", 2]
   },
   overrides: [
     {
@@ -26,12 +27,6 @@ module.exports = {
       ],
       env: {
         jest: true,
-      },
-    },
-    {
-      files: ['*.vue'],
-      rules: {
-        indent: 'off',
       },
     },
   ],
