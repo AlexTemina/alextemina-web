@@ -1,56 +1,47 @@
 <template>
   <main class="cv">
-    <CvModule class="test-module" :subtitle="cvModuleSubtitle">
-      <ModuleList :items="moduleListData">
+    <InfoModule class="test-module" :subtitle="cvModuleSubtitle">
+      <ModuleList :items="experience.experienceItems">
         <template v-slot="slotProps">
-          <ModuleListItem v-bind:info="slotProps.itemData.info"></ModuleListItem>
+          <ModuleListItemExperience v-bind:item="slotProps.item"></ModuleListItemExperience>
         </template>
       </ModuleList>
-    </CvModule>
+    </InfoModule>
   </main>
 </template>
 
 <script lang="ts">
-import CvModule from './components/CvModule.vue';
+import InfoModule from './components/InfoModule.vue';
 import ModuleList from './components/ModuleList.vue';
-import ModuleListItem from './components/ModuleListItem.vue';
-import { ModuleListItemData } from './typings';
+import ModuleListItemExperience from './components/ModuleListItemExperience.vue';
+import { Experience } from './models';
 
 export default {
   components: {
-    CvModule,
+    InfoModule,
     ModuleList,
-    ModuleListItem,
+    ModuleListItemExperience,
   },
-  data(): { cvModuleSubtitle: string; moduleListData: ModuleListItemData[] } {
+  data(): { cvModuleSubtitle: string; experience: Experience } {
     return {
       cvModuleSubtitle: 'Experiencia',
-      moduleListData: [
+      experience: Experience.createExperience([
         {
-          key: 'sopra',
-          info: {
-            text: 'Sopra Steria Valencia',
-            subtext: '2019-2020',
-            strongText: 'Frontend developer',
-          },
+          location: 'Sopra Steria Valencia',
+          dates: ['2019-03', '2020-07'],
+          role: 'Frontend developer',
         },
         {
-          key: 'freelance',
-          info: {
-            text: 'Freelance',
-            subtext: '2018-2019',
-            strongText: 'Freelance',
-          },
+          location: 'Freelance',
+          dates: ['2018', '2019'],
+          role: 'Freelance',
         },
         {
-          key: 'etra',
-          info: {
-            text: 'Etra Valenci',
-            subtext: '2017-2018',
-            strongText: 'Researcher',
-          },
+          location: 'Etra Valencia',
+          dates: ['2017', '2018'],
+          role: 'Researcher',
         },
-      ],
+      ]),
     };
   },
 };

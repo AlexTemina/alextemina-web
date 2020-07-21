@@ -5,7 +5,7 @@ module.exports = {
   },
   extends: [
     'plugin:vue/essential',
-    "plugin:prettier/recommended",
+    'plugin:prettier/recommended',
     '@vue/airbnb',
     '@vue/typescript/recommended',
   ],
@@ -17,14 +17,15 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'import/prefer-default-export': 'off',
     'import/extensions': 'off',
-    "indent": ["error", 2]
+    indent: ['error', 2],
+    '@typescript-eslint/explicit-function-return-type': ['error'],
+    'max-len': ['error', { code: 100 }],
+    'arrow-body-style': 'off',
+    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
   },
   overrides: [
     {
-      files: [
-        '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)',
-      ],
+      files: ['**/__tests__/*.{j,t}s?(x)', '**/tests/unit/**/*.spec.{j,t}s?(x)'],
       env: {
         jest: true,
       },

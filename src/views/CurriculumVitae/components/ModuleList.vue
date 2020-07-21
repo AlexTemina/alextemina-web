@@ -4,7 +4,7 @@
     <ul class="list__items">
       <li class="list-item" v-for="item in items" :key="item.key">
         <div class="list-item__bullet"></div>
-        <slot v-bind:itemData="item" />
+        <slot v-bind:item="item" />
       </li>
     </ul>
   </div>
